@@ -18,10 +18,10 @@ try:
 		    print("Conexão estabelecida com sucesso!")
             
             #Input para os dados do cliente
-            nome = input("Digite o nome do cliente: ")
-            endereco = input("Digite o endereço do cliente: ")
-            cidade = input("Digite a cidade do cliente: ")
-            cep = input("Digite o CEP do cliente: ")
+    nome = input("Digite o nome do cliente: ")
+    endereco = input("Digite o endereço do cliente: ")
+    cidade = input("Digite a cidade do cliente: ")
+    cep = input("Digite o CEP do cliente: ")
             
             #Exemplo de execução de uma consulta para inserir dados na tabela clientes
             cursor = connection.cursor()
@@ -29,7 +29,7 @@ try:
                  "INSERT INTO clientes (Nome, Endereço, Cidade, CEP) "
                  "VALUES (%s, %s, %s, %s)"
 			)
-            client_data = (nome, endereco, cidade, cep
+            client_data = (nome, endereco, cidade, cep)
             cursor.execute(insert_query, client_data)
             connection.commit()
             print("Dados do cliente inserido com sucesso.")
@@ -42,4 +42,3 @@ finally:
 	if 'connection' in locals()
     connection.close()
     print("Conexão encerrada.")
-            
